@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>KAIYA Wisata</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="auth"></div>
+        <!--<script src="js/auth.js"></script>-->
+         <!-- Input Wisata -->
+        <div class="portfolio-modal modal fade" id="modal-wisata" tabindex="-1" 
+        role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <form role="form" id="form-tambah" method="post">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h3 class="text-uppercase">WISATA</h3>
+                                    <div class="form-group text-left">
+                                        <label>Nama</label>
+                                        <input class="form-control" id="nama" name="nama">
+                                        <input type="hidden" class="form-control" id="id" name="id">
+                                        <p style="color:red" id="error_nama"></p>
+                                    </div>
+                                    <div class="form-group text-left">
+                                        <label>Jenis Kelamin</label>
+                                            <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
+                                                <option value="">Pilih</option>
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
+                                            <p style="color:red" id="error_jenis_kelamin"></p>
+                                    </div>
+                                    <div class="form-group text-left">
+                                        <label>Telepon</label>
+                                        <input class="form-control" id="telepon" name="telepon">
+                                        <p style="color:red" id="error_telepon"></p>
+                                    </div>
+                                    <div class="form-group text-left">
+                                        <label>Alamat</label>
+                                            <textarea id="alamat" name="alamat" class="form-control" rows="3"></textarea>
+                                            <p style="color:red" id="error_alamat"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-primary" >Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

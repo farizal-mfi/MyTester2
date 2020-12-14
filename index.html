@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>KAIYA WISATA</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/agency.css" rel="stylesheet">
+  <link href="css/bootstrap-select.min.css" rel="stylesheet">
+  <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+  <link href="css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">HOME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" 
+              data-toggle="collapse" data-target="#navbarResponsive" 
+              aria-controls="navbarResponsive" aria-expanded="false" 
+              aria-label="Toggle navigation" id="menu">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Paket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Wisata</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#weather">Weather</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li> -->
+          <li class="nav-item">
+              <a class="nav-link" id="btnprofile" href="edit_profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="btnprofile" href="tester.html">tester</a>
+          </li>
+         <!--  <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="setting.html">Setting</a>
+          </li> -->
+          <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" href="#modal-login" id="btnlogin">Login</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="" id="btnlogout">Logout</a>
+          </li>
+<!--          <li class="nav-item">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="auth">My Profile</a>
+              <ul class="nav-item dropdown-menu">
+                  <li class="nav-item"><a class="js-scroll-trigger">Setting</a></li>
+                  <li class="nav-item"><a class="js-scroll-trigger">Logout</a></li>
+              </ul>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Welcome To KAIA WISATA!</div>
+        <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+<!--          <div class="button">
+            <a class="btn btn-light  btn-sm text-uppercase col-4" href="trip.html">Trip</a> 
+            <a class="btn btn-light  btn-sm text-uppercase col-4" data-toggle="modal" href="#modal-wisata">My trips</a>
+            <a class="btn btn-light btn-sm text-uppercase js-scroll-trigger" href="#about">Event</a>
+            <a class="btn btn-light btn-sm text-uppercase js-scroll-trigger" href="#services">Weather</a>
+          </div>-->
+<!--        <a class="btn btn-primary btn-md text-uppercase col-4 js-scroll-trigger" href="#services">Trip</a>
+        <a class="btn btn-primary btn-md text-uppercase col-4 js-scroll-trigger" href="#services">My Trip</a>-->
+        <a class="btn btn-primary btn-xl text-uppercase" id="btnjourney">Let's Journey</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Input Wisata -->
+  <div class="portfolio-modal modal fade" id="modal-wisata" tabindex="-1" 
+       role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form role="form" id="order" method="post">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h3 class="text-uppercase">my journey</h3>
+                  <div class="form-group text-left">
+                    <label>Jumlah orang</label>
+                      <input class="form-control cek" type="number" id="orang" name="orang" placeholder="ex: 123" required="required">
+                      <input type="hidden" class="form-control" id="id" name="id">
+                      <p style="color:red" id="error_nama"></p>
+                  </div>
+                    <!-- <div class="form-group text-left">
+                        <label>Jumlah orang</label>
+                            <label class="form-control radio-inline">
+                              <input type="radio" id="orang" name="orang" required="required"> test
+                            </label>
+                            <p style="color:red" id="error_nama"></p>
+                  </div> -->
+                  <div class="form-group text-left" id="transport">
+                    <label>Menggunakan Kendaraan</label>
+                      <select id="kendaraan" name="kendaraan" class="form-control" required="required">
+                        <option value="">Pilih</option>
+                        <option value="IYA">Iya</option>
+                        <option value="TIDAK">Tidak</option>
+                      </select>
+                    <div id="field">
+                    <br>
+                      <select id="jns_kendaraan" name="jns_kendaraan" class="form-control" required="required">
+                        <option value="0">Pilih</option>
+                                    <!-- <option value="IYA">Iya</option>
+                                    <option value="TIDAK">Tidak</option> -->
+                      </select>
+                    </div>
+                    <p style="color:red" id="error_jns_kendaraan"></p>
+                  </div>
+                  <div class="form-group row text-left">
+                    <div class="col-md-6">
+                      <label>Check-in Date</label>
+                        <div class="input-group-prepend col-sm-16" id="tgl">
+                          <input class="form-control cek" id="checkin" name="checkin" type="date">
+                                <!-- <div class="input-group-text">
+                                  <i class="fa fa-calendar"></i>
+                                </div> -->
+                        </div>
+                        <p style="color:red" id="error_checkin"></p>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Check-out Date</label>
+                        <div class="input-group-prepend col-sm-16">
+                          <input class="form-control cek" id="checkout" name="checkout" type="date">
+                                <!-- <div class="input-group-text">
+                                  <i class="fa fa-calendar"></i>
+                                </div> -->
+                        </div>
+                        <p style="color:red" id="error_checkout"></p>
+                    </div>
+                  </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary" id="cobanext" disabled="disabled">Next</button>
+                    </div>
+                    <!-- <div id="bagan2">
+                      <div class="form-group text-left">
+                        <label>Paket</label>
+                          <input class="form-control" type="text" id="paket" required="required" value="Custom" readonly>
+                            <div id="field-paket">
+                            <br>
+                              <select id="jns_wisata"  class="booststrap-select" data-size="5" data-width="100%" data-live-search="true" multiple>
+                                <option value="0">Pilih</option>
+                              </select>
+                            </div> 
+                            <p style="color:red" id="error_wisata"></p>
+                            <p style="color:blue" id="maks_wisata"></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary" id="btnorder" >Simpan</button>
+                      </div>
+                    </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <form role="form" id="orderr" method="post">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <div class="modal-footer"></div>
+                  <div class="form-group text-left">
+                    <label>Paket</label>
+                          <!-- <select id="paket" name="paket" class="form-control" required="required">
+                            <option value="0">Pilih</option>
+                          </select> -->
+                      <input class="form-control" type="text" id="paket" required="required" value="Custom" readonly>
+                        <div id="field-paket">
+                        <br>
+                          <select id="jns_wisata"  class="booststrap-select" data-size="5" data-width="100%" data-live-search="true" multiple>
+                            <option value="0">Pilih</option>
+                                  <!-- <option value="IYA">Iya</option>
+                                  <option value="TIDAK">Tidak</option> -->
+                          </select>
+                        </div> 
+                        <p style="color:red" id="error_wisata"></p>
+                        <p style="color:blue" id="maks_wisata"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btnnextt">Next</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Login -->
+  <div class="portfolio-modal modal fade" id="modal-login" tabindex="-1" 
+       role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form role="form" id="form-login" method="post">
+          <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                 <h3 class="text-uppercase">Login Page</h3>
+                 <hr class="sidebar-divider">
+                 <div class="form-group text-left pesan" id="pesan"></div>
+                 <div class="form-group text-left">
+                            <!--<label>Nama</label>-->
+                            <input class="form-control" id="username" name="username" placeholder="Email/No.tlp" required="required"
+                                   data-validation-required-message="Please enter your Email or No.tlp.">
+                            <!--<input type="hidden" class="form-control" id="id" name="id">-->
+                            <p class="help-block text-danger" id="id"></p>
+                  </div>
+                  <div class="form-group text-left">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required"
+                               data-validation-required-message="Please enter your Password.">
+                            <p class="help-block text-danger" id="password"></p>
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                  </div>
+                 <br>
+                 <div class="text-center">
+                    <a class="small" href="">Forgot Password?</a>
+                  </div>
+                  <div class="text-center">
+                      <a class="small" href="register.html">Create an Account!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Services -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Paket</h2>
+          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">E-Commerce</h4>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Responsive Design</h4>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Web Security</h4>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+        </div>
+        <div class="col-md-12">
+          <span class="fa-stack fa-4x">
+             <a class="btn btn-primary btn-sm text-uppercase js-scroll-trigger" href="#services">Lainnya</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="bg-light page-section" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Wisata</h2>
+          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Threads</h4>
+            <p class="text-muted">Illustration</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Explore</h4>
+            <p class="text-muted">Graphic Design</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Finish</h4>
+            <p class="text-muted">Identity</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Lines</h4>
+            <p class="text-muted">Branding</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Southwest</h4>
+            <p class="text-muted">Website Design</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Window</h4>
+            <p class="text-muted">Photography</p>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-6 portfolio-item">
+          <div class="portfolio-caption">
+            <a class="btn btn-primary btn-sm text-uppercase js-scroll-trigger" href="#services">Lainnya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Maps -->
+  <!-- <section class="bg-light page-section" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Portfolio</h2>
+          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 text-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.7059843176112!2d110.41379562775069!3d-7.746052607878705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59f33ba1d52f%3A0xdd936d4fd36637e!2sFist+Effect+IT+Training+%26+Consultant!5e0!3m2!1sid!2sid!4v1564661445704!5m2!1sid!2sid" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div id="map"></div>
+          </div>
+      </div>
+    </div>
+  </section> -->
+  
+  <!-- Weather -->
+  <section class="bg-light page-section" id="weather">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Weather</h2>
+          <h3 class="section-subheading text-muted"></h3>
+        </div>
+      </div>
+        <div class="row">
+            <div class="container-weather">
+                <div class="weather-container">
+                    <div class="weather-icon">
+                        <img src="icons/unknown.png" alt="">
+                    </div>
+                    <div class="temperature-value">
+                        <p>- °<span>C</span></p>
+                    </div>
+                    <div class="temperature-description">
+                        <p> - </p>
+                    </div>
+                    <div class="location">
+                        <p>-</p>
+                    </div> 
+                </div>
+                
+<!--                <div class="notification"> </div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="icons/unknown.png" alt="">
+            </div>
+            <div class="temperature-value">
+                <p>- °<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p> - </p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>-->
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <!-- <section class="bg-light page-section" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+            <h4>Kay Garland</h4>
+            <p class="text-muted">Lead Designer</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+            <h4>Larry Parker</h4>
+            <p class="text-muted">Lead Marketer</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+            <h4>Diana Pertersen</h4>
+            <p class="text-muted">Lead Developer</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Clients -->
+ <!--  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <a href="#">
+            <img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#">
+            <img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#">
+            <img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#">
+            <img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Contact -->
+  <!-- <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Contact Us</h2>
+          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+  <!-- <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <span class="copyright">Copyright &copy; Your Website 2019</span>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <!-- Portfolio Modals -->
+
+  <!-- Modal 1 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->                  
+                
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> 
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2020</li>
+                  <li>Client: Threads</li>
+                  <li>Category: Illustration</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 2 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2017</li>
+                  <li>Client: Explore</li>
+                  <li>Category: Graphic Design</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2017</li>
+                  <li>Client: Finish</li>
+                  <li>Category: Identity</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2017</li>
+                  <li>Client: Lines</li>
+                  <li>Category: Branding</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2017</li>
+                  <li>Client: Southwest</li>
+                  <li>Category: Website Design</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2017</li>
+                  <li>Client: Window</li>
+                  <li>Category: Photography</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- <script src="vendor/datetimepicker/src/js/bootstrap-datetimepicker.js"></script> -->
+  
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/weather.js"></script>
+  
+  <!--<script src="js/script.js"></script>-->
+  <!--<script src="js/script1.js"></script>-->
+  <script src="js/auth.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/sweetalert2.min.js"></script>
+  <script src="js/moment-with-locales.js"></script>
+  <script src="js/bootstrap-datetimepicker.js"></script>
+  <script src="js/bootstrap-select.min.js"></script>
+  
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+  <script>
+//      alert(window.localStorage.getItem('after_login'))
+      // $("#btnjourney").hide();
+    window.localStorage.setItem('ceklogin',0);
+    if(window.localStorage.getItem('after_login')==1){
+      $("#btnlogin").hide();
+      $("#btnprofile").show();
+      $("#btnlogout").show();
+      $("#btnjourney").show();
+      window.localStorage.setItem('ceklogin',1);
+    } else {
+        $("#btnlogin").show();
+        $("#btnprofile").hide();
+        $("#btnlogout").hide();
+    }
+    </script>
+    <script>
+    if(window.localStorage.getItem('after_register')== 1){
+        Swal.fire({
+                        icon: 'success',
+                        title: 'Register Success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+        $("#modal-login").modal();
+        $(".pesan").addClass('alert alert-success');
+        $("#pesan").html('<b>Please activited your account!<b>') 
+        window.localStorage.setItem('after_register',0);
+    }
+    </script>
+    <script>
+        $("#btnlogout").click(logout);
+        function logout(){
+            window.localStorage.clear();
+                // alert('anda sudah keluar');
+                 Swal.fire({
+                        icon: 'success',
+                        title: 'Logout Success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+            $("#btnlogin").show();
+            $("#btnlogout").hide();
+            // window.location.href = 'index.html';
+        }
+    </script>
+    
+    <script>
+      // $("form#order > input.cek").keyup(function(){
+		  //   var empty = false;
+
+		  //   $("form#order > input.cek").each(function(){
+			//     if($(this).val() == ""){
+			// 	  empty = true;
+			//     }
+		  //   });
+
+		  //   if(empty){
+			//     $("#cobanext").attr("disabled","disabled");
+		  //   } else {
+			//     $("#cobanext").removeAttr("disabled");
+		  //   }
+	    // })
+      // $(function(){
+    //     $("#checkin").datetimepicker({
+    // // useCurrent: false,
+    //     locale: 'id',
+    //     format: 'DD/MM/YYYY'
+    //     });
+
+  //       $("#checkout").datetimepicker({
+  //         useCurrent: false,
+  //         locale: 'id',
+  //         format: 'DD/MM/YYYY'
+  //       });
+
+  //       $("#checkin").on("dp.change", function(e) {
+  //         $('#checkout').data("DateTimePicker").minDate(e.date);
+  //     // CalcDiff()
+  //       });
+  
+  //       $("#checkout").on("dp.change", function(e) {
+  //         $("#checkin").data("DateTimePicker").maxDate(e.date);
+  // //    var a=$('#checkin').data("DateTimePicker").date();
+  //   // var b=$('#checkout').data("DateTimePicker").date();
+  //   // console.log('A = '+a/86400000+ ' dan B='+b/86400000);
+  //   // $('#checkout').data("DateTimePicker").clear();
+  //   // $("#checkin").data("DateTimePicker").clear();
+  //         CalcDiff(); 
+  //       });
+  //     })
+
+  //     function CalcDiff(){
+  //       var a=$('#checkin').data("DateTimePicker").date();
+  //       var b=$('#checkout').data("DateTimePicker").date();
+  //       console.log('A = '+a/86400000+ ' dan B='+b/86400000);
+  //       var timeDiff=0
+  //       if (b) {
+  //           timeDiff = (b - a) / 1000;
+  //         }
+    
+  //       var selisih = Math.floor(timeDiff/86400);
+  //       console.log(selisih);
+  //   // $('#selisih').val(Math.floor(timeDiff/(86400))+' Hari')
+  //       var hasil = (selisih * 3)-1;
+  //       console.log(hasil);
+  //   // $("#maks_wisata").val(hasil);   
+  //     }
+    </script>
+</body>
+
+</html>

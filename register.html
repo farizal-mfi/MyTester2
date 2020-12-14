@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KAIYA WISATA</title>
+
+  <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+        <link href="css/agency.min.css" rel="stylesheet">
+        <link href="css/bootstrapValidator.css" rel="stylesheet">
+        <link href="css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+    <div id="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">HOME</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
+                    aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="edit_profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+    </nav>
+    <div id="loader"></div>
+        <section class="page-section">
+            <form role="form" id="register" method="post">
+                <div class="container">
+                    <h1 class="h3 mb-4 text-black-800">Register</h1>
+                    <hr class="sidebar-divider">
+                    <div class="row">
+                        <div class="col-lg-10">
+                             <div class="form-group text-left">
+                                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" name="email" required="required"
+                                               data-validation-required-message="Please enter your email.">
+                                    </div>
+                                <p class="col-sm-2 help-block text-danger" id="message"></p>
+                                <!-- <label for="email" class="col-sm-2 col-form-label" id="mess"></label> -->
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="email" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="input-group-prepend col-sm-10">
+                                        <input type="password" class="form-control" id="password" name="password" required="required"
+                                               data-validation-required-message="Please enter your password.">
+                                        <div class="input-group-text">
+                                                <i id="icon" class="fa fa-eye-slash"></i>
+                                        </div>
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="email" class="col-sm-4 col-form-label">Confirm Password</label>
+                                    <div class="input-group-prepend col-sm-10">
+                                        <input type="password" class="form-control" id="conf_password" name="conf_password"
+                                               data-validation-match-match="password" required="required">
+                                        <div class="input-group-text">
+                                                <i id="icon1" class="fa fa-eye-slash"></i>
+                                        </div>
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="email" class="col-sm-2 col-form-label">Full Nama</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" minlength="5" class="form-control" id="nama" name="nama" required="required"
+                                               data-validation-required-message="Please enter your full name.">
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <!-- <div class="form-group text-left">
+                                <label class="col-sm-4 col-form-label">Identity Type</label>
+                                    <div class="col-sm-3">
+                                        <select id="identity_type" name="identity_type" class="form-control" required="required"
+                                                data-validation-required-message="Please choose one.">
+                                                <option value="">Pilih</option>
+                                                <option value="KTP">KTP</option>
+                                                <option value="SIM">SIM</option>
+                                                <option value="PASSPORT">PASSPORT</option>
+                                                <option value="OTHER">OTHER</option>
+                                        </select>
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div> -->
+                           <!--  <div class="form-group text-left">
+                                <label for="email" class="col-sm-4 col-form-label">Identity Number</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="identity_number" name="identity_number" required="required"
+                                               data-validation-required-message="Please enter your identity number.">
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div> -->
+                            <div class="form-group text-left">
+                                <label class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                                    <div class="col-sm-3">
+                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" required="required">
+                                            <option value="">Pilih</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            
+                            <!-- <div class="form-group text-left">
+                                <label class="col-sm-2 col-form-label">Birthdate</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" id="date" name="date" class="form-control" required="required">
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div> -->
+                            <div class="form-group text-left">
+                                <label class="col-sm-2 col-form-label">Alamat</label>
+                                    <div class="col-sm-10">
+                                        <textarea id="alamat" name="alamat" class="form-control" rows="3" required="required"></textarea>
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="email" class="col-sm-2 col-form-label">Phone Number</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="phone_number" name="phone_number" 
+                                               data-validation-required-message="Please enter your name." required="required">
+                                    </div>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <center>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
+                                <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </form>            
+        </section>
+
+    </div>
+    
+        
+
+        
+        
+        
+ <!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--<script src="vendor/bootstrap/js/bootstrap.js"></script>-->
+
+  <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+        
+  <!--<script src="js/script.js"></script>-->
+        <!--<script src="js/bootstrapValidator.js"></script>-->
+        <script src="js/auth.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        
+  <!-- Custom scripts for this template -->
+        <script src="js/agency.min.js"></script>
+    </body>
+</html>

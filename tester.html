@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-select.css" rel="stylesheet">
+	  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/agency.css" rel="stylesheet">
+  <link href="css/bootstrap-select.css" rel="stylesheet">
+  <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+  <link href="css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+</head>
+	<body>
+    <input type="date" id="checkin">
+    <br>
+    <br>
+    <input type="date" id="checkout">
+    <br>
+    <br>
+		<select class="bootstrap-select" data-width="100%" data-live-search="true" id="hasil" multiple name="hasil">
+        <option value="0">--pilih--</option>
+        <option value="Mustard">Mustard</option>
+        <option value="Mustard">disana</option>
+        <option value="Mustard">disini</option>
+        <option value="Mustard">jauh</option>
+        <option value="Mustard">pergi</option>
+        <option value="Mustard">sangat</option>
+		</select>
+<br>
+<br>
+<button class="btn btn-warning rm-mustard">Remove Mustard</button>
+<button class="btn btn-danger rm-ketchup">Remove Ketchup</button>
+<button class="btn btn-success rm-relish">Remove Relish</button>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="js/bootstrap-select.js"></script>
+ <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- <script src="vendor/datetimepicker/src/js/bootstrap-datetimepicker.js"></script> -->
+  
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/weather.js"></script>
+  
+  <!--<script src="js/script.js"></script>-->
+  <!--<script src="js/script1.js"></script>-->
+  <script src="js/auth.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/sweetalert2.min.js"></script>
+  <script src="js/moment-with-locales.js"></script>
+  <script src="js/bootstrap-datetimepicker.js"></script>
+  <script src="js/bootstrap-select.js"></script>
+  
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+<script type="text/javascript">
+	$('.rm-mustard').click(function () {
+    $('.remove-example').find('[value=Mustard]').remove();
+    $('.remove-example').selectpicker('refresh');
+  });
+  
+  $('.rm-ketchup').click(function () {
+    $('.remove-example').find('[value=Ketchup]').remove();
+    $('.remove-example').selectpicker('refresh');
+  });
+  
+  $('.rm-relish').click(function () {
+    $('.remove-example').find('[value=Relish]').remove();
+    $('.remove-example').selectpicker('refresh');
+	});
+
+  $('$checkin').click(function() {
+    $('#hasil').selectpicker('deselectAll');
+		$('#hasil').selectpicker('refresh');
+  })
+</script>
+	</body>
+
+</html>

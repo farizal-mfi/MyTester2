@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KAIYA WISATA</title>
+
+  <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+        <link href="css/agency.min.css" rel="stylesheet">
+        <link href="css/bootstrapValidator.css" rel="stylesheet">
+        <link href="css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9Fpi-5h-cRvxIpUsYrQVJ0kv1HbSCotM&callback=initAutocomplete&libraries=places&v=weekly"
+        defer></script>
+        <style type="text/css">
+            #map {
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">HOME</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
+                    aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="edit_profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+    </nav>
+    <div id="loader"></div>
+        <section class="page-section">
+            <form role="form" id="register" method="post">
+                <div class="container">
+                    <h1 class="h3 mb-4 text-black-800">My Journey</h1>
+                    <hr class="sidebar-divider">
+                    <div class="row">
+                        <div class="col-lg-10">
+                             <div class="form-group text-left">
+                                <label for="checkin" class="col-form-label">Check in</label>
+                                        <input type="date" class="form-control" id="checkin" name="checkin" required="required"
+                                               data-validation-required-message="Please enter date.">
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="checkout" class="col-form-label">Check out</label>
+                                        <input type="date" class="form-control" id="checkout" name="checkout" required="required"
+                                               data-validation-required-message="Please enter date.">
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="people" class="col-form-label">Jumlah Orang</label>
+                                    <input type="number" class="form-control" id="people" name="people" data-validation-required-message="Please enter your name." required="required">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                           <!--  <div class="form-group text-left">
+                                <label for="email" class="col-form-label">Tempat Penginapan</label>
+                                    <input type="number" class="form-control" id="phone_number" name="phone_number" data-validation-required-message="Please enter your name." required="required">
+                                <p class="help-block text-danger"></p>
+                            </div> -->
+                            <div class="form-group text-left">
+                                <label for="kendaraan" class="col-form-label">Menggunakan Kendaraan</label>
+                                    <select id="kendaraan" name="kendaraan" class="form-control" required="required">
+                                        <option value="">Pilih</option>
+                                        <option value="IYA">Iya</option>
+                                        <option value="TIDAK">Tidak</option>
+                                    </select>
+                                <div id="field">
+                                <br>
+                                    <select id="jns_kendaraan" name="jns_kendaraan" class="form-control" required="required">
+                                        <option value="0">Pilih</option>
+                                        <!-- <option value="IYA">Iya</option>
+                                        <option value="TIDAK">Tidak</option> -->
+                                    </select>
+                                </div>
+                                <p style="color:red" id="error_jns_kendaraan"></p>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="paket" class="col-form-label">Paket</label>
+                                    <input type="text" class="form-control" id="paket" name="paket" value="Custom" readonly>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="wisata" class="col-form-label">Pilih wisata</label>
+                                    <input type="text" class="form-control" id="lokasi_awal" name="lokasi_awal" data-validation-required-message="Please enter your origin." required="required">
+                                    <p style="font-size: 13px; color: blue">*lokasi awal(hotel, airport, dll)</p>
+                                    
+                                    <input type="text" class="form-control" id="lokasi_wisata" name="lokasi_wisata" data-validation-required-message="Please enter your destination." required="required">
+                                    <p class="help-block text-danger"></p>
+                            </div>
+                            <!-- <div id="map"></div> -->
+                            <center>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
+                                <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </form>            
+        </section>
+
+    </div>
+    
+        
+
+        
+        
+        
+ <!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--<script src="vendor/bootstrap/js/bootstrap.js"></script>-->
+
+  <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+        
+  <!--<script src="js/script.js"></script>-->
+        <!--<script src="js/bootstrapValidator.js"></script>-->
+        <script src="js/auth.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+        
+  <!-- Custom scripts for this template -->
+        <script src="js/agency.min.js"></script>
+        
+
+        <script type="text/javascript">
+            function initAutocomplete() {
+        // Create the search box and link it to the UI element.
+        const input = document.getElementById("lokasi_awal");
+        const lat = document.getElementById("lat");
+        const searchBox = new google.maps.places.SearchBox(input);
+        
+        searchBox.addListener("places_changed", () => {
+          const places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+          const bounds = new google.maps.LatLngBounds();
+          places.forEach((place) => {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+
+            // document.getElementById('lat').value = place.geometry.location.lat();
+            // document.getElementById('lng').value = place.geometry.location.lng();
+
+            console.log("lat = " + place.geometry.location.lat());
+            console.log("lat = " + place.geometry.location.lng());
+          });
+        });
+      }
+        </script>
+    </body>
+</html>
